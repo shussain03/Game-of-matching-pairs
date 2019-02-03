@@ -1,0 +1,34 @@
+body { font-family: 'Arial', 'Helvetica', 'Times New Roman', 'Serif' }
+table {
+  margin: 0 auto;
+  border-radius:10px;
+}
+#container1{
+  padding: 6px;
+  width: 90%;
+  text-align:right;
+  font-size: 1.5em;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: rgb(240, 13, 13);
+  color: white;
+}
+
+#container1:hover{
+  background: white;
+  color: black;
+}
+
+td {
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  font-size: 3em;     /*size of the number reduce*/
+}
+
+.clear {
+  background: white;
+}
+
