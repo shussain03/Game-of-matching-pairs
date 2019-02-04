@@ -21,9 +21,9 @@ table {
 }
 
 td {
-  border: 1px solid black;
+  border: none;
   width: 200px;
-  height: 200px;
+  height: 290px;
   text-align: center;
   font-size: 3em;     /*size of the number reduce*/
 }
