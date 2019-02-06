@@ -1,8 +1,70 @@
-body { font-family: 'Arial', 'Helvetica', 'Times New Roman', 'Serif' }
-table {
-  margin: 0 auto;
-  border-radius:10px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
 }
+/*
+-or 100vh = viewport height 100vw = viewport width.
+-https://css-tricks.com/almanac/properties/f//flex = flex property is a sub-poperty of Flexible Box Layout model*/
+body {
+  height: 100vh;   
+  display: flex;  
+  background: rgb(243, 15, 53);
+}
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;    
+}
+
+/* this puts the cards into 3 rows with 4 cards*/
+.memory-card {
+  width: calc(25% - 10px);
+  height:calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform-style: scale(1);    /*resize the dimensions of the card from 2d - 3d, */
+  transform-style: preserve-3d; /*this is a 3d transition effect*/
+  transition: transform .5s;  /* gives the card a movement effect*/
+  box-shadow: 1px 1px 1px rgb(0,0,0,.3);
+}
+
+/* 
+-a click effect
+*/
+.memory-card:active {
+  transform: scale(0.97);  /*resize the dimensions of the card from 2d - 3d, */
+  transition: transform .2s; /* gives the card a movement effect*/
+}
+
+/*
+-to flip the cards when clicked, a class-flip is added to the CSS element. 
+- the card will also rotate 180degrees
+-memory-card elements in the CSS file will also be called by const cards = document.querySelectorAll in the app.js file. */
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+width: 100%;
+height: 100%;
+padding: 2px;
+position: absolute;
+border-radius: 5px;
+background: rgb(12, 12, 214);
+backface-visibility: hidden;  /*this reveals the image underneath*/
+} /*this is our 3d card that flips*/
+
+.card-front {
+  transform: rotateY(180deg);
+}
+
+/* 
 #container1{
   padding: 6px;
   width: 90%;
@@ -11,7 +73,7 @@ table {
   border: none;
   cursor: pointer;
   margin-top: 20px;
-  background-color: rgb(240, 13, 13);
+  background-color: rgb(214, 20, 20);
   color: white;
 }
 
@@ -19,26 +81,6 @@ table {
   background: white;
   color: black;
 }
-
-td {
-  border: none;
-  width: 200px;
-  height: 290px;
-  text-align: center;
-  font-size: 3em;     /*size of the number reduce*/
-}
-
-.clear {
-  background: white;
-}
+ */
 
 
-.faceup {
-
-}
-
-.facedown {
-  
-}
-
-/*https://3dtransforms.desandro.com/card-flip*/
