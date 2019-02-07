@@ -1,16 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("working");
 
+  
+
   const cards = document.querySelectorAll('.memory-card'); /*
   -memory-card elements in the CSS file will also be called by const cards = document.querySelectorAll in the app.js file.
   -const - has been used as a unique id(edentifier in this game
     */
 
+   alert("Instructions: To play the game flip over two cards and find two images that are the same. Once you have found all the pairs you have won the game. Good luck, there are no losers only winners, so let's start!");
 
   var hasFlippedCard = false; // hasflipped card & flippedcard manages the flip state incase no cards are flipped over it is et to 'true' and set to the card being clicked.
   var lockBoard = false;
   var firstCard, secondCard;
 
+
+  //
   function flipCard() {
     if (lockBoard) return; /*this freezes the first card*/
     if (this === firstCard) return; 
@@ -60,6 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
    [firstCard, secondCard] = [null, null];
  }
 
+ (function shuffle() {
+   cards.forEach(card =>{
+     var randomPosition = Math.floor(Math.random() * 12);
+     card.style.order = randomPosition;
+   });
+ })();
+ 
   cards.forEach(card => card.addEventListener('click',flipCard));  //
 
 
