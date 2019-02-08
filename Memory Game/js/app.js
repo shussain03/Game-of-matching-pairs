@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var hasFlippedCard = false; // hasflipped card & flippedcard manages the flip state incase no cards are flipped over it is et to 'true' and set to the card being clicked.
   var lockBoard = false;
   var firstCard, secondCard;
+  var score = 0;
 
 
   //
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /*to add extrainformation in an html, use dataset.framework*/
   function checkForMatch() {
     var isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-    isMatch ? disableCards() : unflipCards(); zz
+    isMatch ? disableCards() : unflipCards();
   }
 
   function disableCards() {
@@ -60,6 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1500);
   }
 
+
+
+  
  function resetBoard() {
    [hasFlippedCard, lockBoard] = [false, false];
    [firstCard, secondCard] = [null, null];
@@ -72,7 +76,12 @@ document.addEventListener("DOMContentLoaded", function () {
    });
  })();
  
-  cards.forEach(card => card.addEventListener('click',flipCard));  //
+  cards.forEach(card => card.addEventListener('click',flipCard));  
+
+  //if score of pairs of cards match a winning statement will appear = score has to be created
+  if (score == 6) {
+    document.location = "winner.html"
+  };
 
 
 

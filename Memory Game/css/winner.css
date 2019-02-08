@@ -1,0 +1,9 @@
+body {
+  background-color: rgb(243, 15, 53);
+  font-family: Times;
+  text-align: center;
+}
+
+.winner {
+  margin-top: 200px
+}

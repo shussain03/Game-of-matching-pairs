@@ -1,21 +1,24 @@
-z2* {
+* {
   padding: 0;
   margin: 0;
+  justify-content: center;  /*centered the game in the middle with the title in the middle*/
+  align-items: center;
   box-sizing: border-box; 
 }
 /*
--or 100vh = viewport height 100vw = viewport width.
 -https://css-tricks.com/almanac/properties/f//flex = flex property is a sub-poperty of Flexible Box Layout model*/
-body {
-  height: 100vh;   
+html, body {
+  width: 100%;
+  height: 100%;   
   display: flex;  
   background: rgb(243, 15, 53);
 }
 
+
 .memory-game {
   width: 640px;
   height: 640px;
-  margin: auto;
+  margin: 10px;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;    
