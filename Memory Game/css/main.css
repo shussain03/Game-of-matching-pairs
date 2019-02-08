@@ -67,23 +67,3 @@ backface-visibility: hidden;  /*this reveals the image underneath*/
   transform: rotateY(180deg);
 }
 
-/* 
-#container1{
-  padding: 6px;
-  width: 90%;
-  text-align:right;
-  font-size: 1.5em;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-  background-color: rgb(214, 20, 20);
-  color: white;
-}
-
-#container1:hover{
-  background: white;
-  color: black;
-}
- */
-
-
